@@ -1,0 +1,50 @@
+{
+  "name": "ad-server-admin",
+  "version": "1.0.0",
+  "description": "Ad Server Admin",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basil79/ad-server-admin.git"
+  },
+  "keywords": [
+    "ad-server",
+    "admin",
+    "advertising",
+    "video-ads",
+    "waterfall",
+    "header-bidding",
+    "iab",
+    "vast",
+    "vpaid",
+    "video",
+    "instream",
+    "outstream"
+  ],
+  "author": "Basil Goldman",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/basil79/ad-server-admin/issues"
+  },
+  "homepage": "https://github.com/basil79/ad-server-admin#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "hbs": "^4.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/register": "^7.16.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.8.0",
+    "eslint-plugin-import": "^2.25.4",
+    "watch": "^0.13.0",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "string-replace-loader": "^2.2.0"
+  }
+}
