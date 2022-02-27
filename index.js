@@ -1,26 +1,44 @@
 const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+
+const indexRouter = require('./routes/index');
+const reportingRouter = require('./routes/reporting');
+const accountsRouter = require('./routes/accounts');
+const supplyTagsRouter = require('./routes/supply-tags');
+const demandTagsRouter = require('./routes/demand-tags');
+const settingsRouter = require('./routes/settings');
 
 const app = express();
-
-const port = normalizePort(process.env.PORT || '8083');
+const port = normalizePort(process.env.PORT || '8082');
 
 function normalizePort(val) {
-  const port = parseInt(val, 10);
+  const _port = parseInt(val, 10);
 
-  if(isNaN(port)) {
+  if(isNaN(_port)) {
     return val;
   }
 
-  if(port >= 0) {
-    return port;
+  if(_port >= 0) {
+    return _port;
   }
 
   return false;
 }
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cookieParser());
+
+app.use('/', indexRouter);
+app.use('/reporting', reportingRouter);
+app.use('/accounts', accountsRouter);
+app.use('/supply-tags', supplyTagsRouter);
+app.use('/demand-tags', demandTagsRouter);
+app.use('/settings', settingsRouter);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}!`)

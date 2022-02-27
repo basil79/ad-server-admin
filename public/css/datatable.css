@@ -1,0 +1,482 @@
+.input-error { border-color: #771100 #efb2b2 #efb2b2 !important; background: #ffeeee !important; }
+.help-tooltip {
+    background: url(../../img/datatable/question_mark.png) no-repeat scroll 0 0;
+    margin-left: 3px;
+    opacity: 0.5;
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+    height: 14px;
+    width: 13px;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+}
+.help-tooltip:hover { opacity: 1;}
+.help-tooltip-box {
+    left: 0;
+    top: 0;
+    position: absolute;
+    padding: 10px;
+    border-color: #bbbbbb #bbbbbb #a8a8a8;
+    border-style: solid;
+    border-width: 1px;
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    box-shadow:0 2px 4px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    width: 300px;
+}
+
+
+
+.data-table tbody tr .editable-actions .handle {
+    height: 24px;
+    margin-left: -30px;
+    position: absolute;
+    width: 30px;
+    z-index: 1;
+    display: none;
+}
+.data-table tbody tr .editable-actions .insert {
+    height: 24px;
+    margin-top: -26px;
+    margin-right: -25px;
+    position: absolute;
+    width: 25px;
+}
+.data-table tbody tr .editable-actions .delete {
+    height: 24px;
+    margin-right: 0px;
+    position: absolute;
+    width: 25px;
+    margin-top: -26px;
+}
+.data-table tbody tr .editable-actions .insert a { color: #2ca01c }
+.data-table tbody tr .editable-actions .delete a { color: #c00 }
+
+.data-table tbody tr .editable-actions .handle a,
+.data-table tbody tr .editable-actions .insert a,
+.data-table tbody tr .editable-actions .delete a {
+    display: none;
+    padding: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+.data-table tbody tr.hover .editable-actions .handle a,
+.data-table tbody tr.hover .editable-actions .insert a,
+.data-table tbody tr.hover .editable-actions .delete a {
+    display: block;
+}
+
+
+.data-table {}
+.data-table table {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-collapse: collapse;
+    Xcolor: #333;
+}
+.data-table table thead tr th {
+    padding: 2px 6px 2px;
+    background-color: #f8f8f8;
+    Xbackground-image: -webkit-gradient(linear, left top, left bottom, from( #f8f8f8 ), to( #eeeeee )); /* Saf4+, Chrome */
+    Xbackground-image: -webkit-linear-gradient( #f8f8f8, #eeeeee ); /* Chrome 10+, Saf5.1+ */
+    Xbackground-image:    -moz-linear-gradient( #f8f8f8, #eeeeee ); /* FF3.6 */
+    Xbackground-image:     -ms-linear-gradient( #f8f8f8, #eeeeee ); /* IE10 */
+    Xbackground-image:      -o-linear-gradient( #f8f8f8, #eeeeee ); /* Opera 11.10+ */
+    Xbackground-image:         linear-gradient( #f8f8f8, #eeeeee );
+    X_filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#eeeeee');
+    vertical-align: bottom;
+    text-shadow : 0 1px 0 #FFFFFF !important;
+    Xheight: 38px;
+    Xborder-bottom: 1px solid #d7d7d7;
+    outline : medium none;
+    Xborder-color: #bcbcbc -moz-use-text-color #bcbcbc #bcbcbc;
+    Xborder-width: 1px medium 1px 1px;
+    Xborder-style: solid none solid solid;
+    border: 1px solid #bbb;
+}
+.data-table table thead tr th.first-item {}
+.data-table table thead tr th.checkbox-column {
+    width: 16px;
+    padding: 2px 6px;
+}
+.data-table table thead tr th.checkbox-column input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    margin: 2px !important;
+    padding: 0 !important;
+}
+.data-table table thead tr th.expandable {
+    width: 20px;
+}
+.data-table table thead tr th div { display: block; Xbackground-color: red; Xcursor: pointer }
+.data-table table thead tr th.sortable { cursor: pointer; }
+.data-table table thead tr th.sortable div {
+    background: url(/img/datatable/icon_sortable.png) no-repeat scroll 0 bottom;
+    padding-left: 10px;
+}
+/*
+.data-table table thead tr th.sortable div:before {
+    Xfont-family: FontAwesome;
+    Xcontent : "\f107";
+    Xfloat: left
+}
+*/
+.data-table table thead tr th.asc {
+    background-color: #d3d3d3;
+    Xbackground-image: -webkit-gradient(linear, left top, left bottom, from( #dedede ), to( #d3d3d3 )); /* Saf4+, Chrome */
+    Xbackground-image: -webkit-linear-gradient( #dedede, #d3d3d3 ); /* Chrome 10+, Saf5.1+ */
+    Xbackground-image:    -moz-linear-gradient( #dedede, #d3d3d3 ); /* FF3.6 */
+    Xbackground-image:     -ms-linear-gradient( #dedede, #d3d3d3 ); /* IE10 */
+    Xbackground-image:      -o-linear-gradient( #dedede, #d3d3d3 ); /* Opera 11.10+ */
+    Xbackground-image:         linear-gradient( #dedede, #d3d3d3 );
+    X_filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dedede', endColorstr='#d3d3d3');
+}
+.data-table table thead tr th.desc {
+    background-color: #d3d3d3;
+    Xbackground-image: -webkit-gradient(linear, left top, left bottom, from( #dedede ), to( #d3d3d3 )); /* Saf4+, Chrome */
+    Xbackground-image: -webkit-linear-gradient( #dedede, #d3d3d3 ); /* Chrome 10+, Saf5.1+ */
+    Xbackground-image:    -moz-linear-gradient( #dedede, #d3d3d3 ); /* FF3.6 */
+    Xbackground-image:     -ms-linear-gradient( #dedede, #d3d3d3 ); /* IE10 */
+    Xbackground-image:      -o-linear-gradient( #dedede, #d3d3d3 ); /* Opera 11.10+ */
+    Xbackground-image:         linear-gradient( #dedede, #d3d3d3 );
+    X_filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dedede', endColorstr='#d3d3d3');
+}
+/*
+.data-table table thead tr th.asc div:before {
+    Xfont-family: FontAwesome;
+    Xcontent: "\f0d8";
+}
+.data-table table thead tr th.desc div:before {
+    Xfont-family: FontAwesome;
+    Xcontent: "\f0d7";
+}
+*/
+
+.data-table table thead tr th.asc div {
+    background: rgba(0, 0, 0, 0) url("/img/datatable/arrow_down.png") no-repeat scroll 0 bottom !important;
+}
+.data-table table thead tr th.desc div {
+    background: rgba(0, 0, 0, 0) url("/img/datatable/arrow_up.png") no-repeat scroll 0 bottom !important;
+}
+
+.data-table table thead tr th div span{ Xpadding-right: 10px; Xdisplay: block; font-weight: bold;}
+.data-table table thead tr th.last-item { border-right: 1px solid #bbb; }
+.data-table table tbody {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+.data-table table tbody tr td { padding: 4px 6px; Xvertical-align: top; border-left: 1px solid #e2e2e2; vertical-align: top; color: #000; }
+.data-table table tbody tr td.first-item { background: none !important; border-right: 1px solid #e2e2e2; }
+.data-table table tbody tr td.first-item input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    margin: 2px;
+    padding: 0 !important;
+}
+.data-table table tbody tr td.expandable { background: none; display: none; border-top: 1px solid #D7D7D7; padding: 0 0 0 32px !important; }
+.data-table table tbody tr td.last-item { padding: 4px 6px; Xbackground: none !important; border-right: 1px solid #e2e2e2 }
+.data-table table tbody tr td:hover .field-actions-mask { display: block;}
+
+.data-table table tbody tr td.editable {
+    padding: 0;
+}
+.data-table table tbody tr td.editable label {
+    display: block;
+    margin: 0;
+    padding: 4px 6px;
+}
+.data-table table tbody tr td.editable input[type="text"] {
+    border: 0 none;
+    margin: 0;
+    width: 100%;
+    padding: 4px 6px;
+    line-height: 1.5;
+    background-color: transparent;
+}
+.data-table table tbody tr td.editable input[type="text"].number,
+.data-table table tbody tr td.editable label.number{
+    direction: ltr;
+    text-align: right;
+}
+.data-table table tbody tr td.editable input[type="text"]:focus {
+    background-color: #fff8d5;
+    border: 1px solid #ebb95b;
+    outline: 1px solid #fad896;
+    padding: 3px 5px;
+}
+.data-table table tbody tr td.editable input[type="checkbox"] {
+    margin: 6px;
+}
+.data-table table tbody tr td.editable select {
+    border: 0 none;
+    margin: 0;
+    width: 100%;
+    padding: 5px 6px;
+    line-height: 1.5;
+    background-color: transparent;
+}
+.data-table table tbody tr td.editable select:focus {
+    background-color: #fff8d5;
+    border: 1px solid #ebb95b;
+    outline: 1px solid #fad896;
+    padding: 4px 5px;
+}
+
+
+.data-table table tbody tr td .editable {
+    border: 1px solid rgba(0, 0, 0, 0);
+    cursor: pointer;
+    line-height: 1.2;
+}
+.data-table table tbody tr td:hover .editable {
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.data-table table tbody tr td:hover .editable-icon {
+    cursor: pointer;
+    display: block;
+}
+.data-table table tbody tr td:hover .data-table table tbody tr { background: #EDEFF4}
+.data-table table tbody tr.nop td { Xbackground-color: #f9f9f9; Xbackground: #FFEAEA; Xbackground: #FFEBE8; text-align: center; border-left: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2; }
+.data-table table tbody tr.nom td { background: #E2E4FF; Xbackground: #E2E4FF; text-align: center; border-left: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2; }
+.data-table table tbody tr.even td { background-color: #fff !important; border-bottom: 1px solid #e2e2e2; }
+.data-table table tbody tr.even.selected td { background-color: #FFF9d7 !important; Xbackground-color: #F2FFEA !important; Xbackground-color: #F0F7EA !important; Xbackground-color: #E4F0D8 !important;} /* #F4FFE6 */
+.data-table table tbody tr.even.disabled td { background-color: #efefef !important; }
+.data-table table tbody tr.even.disabled td.separator { background-color: #fff !important; }
+.data-table table tbody tr.odd td { Xbackground-color: #f8f8f8 !important; border-bottom: 1px solid #e2e2e2; }
+.data-table table tbody tr.odd.selected td { background-color: #FFF9d7 !important; Xbackground-color: #DFFFCA !important; Xbackground-color: #E4F0D8 !important; Xbackground-color: #D0E4BA !important;}
+/*.data-table table tbody tr.group td { background-color: #ddd !important;}*/
+.data-table table tbody tr.group td {
+    background-color: #e9e9e9 !important;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.data-table table tbody tr td.sortable { background-color: #f3f3f3 !important; }
+
+.data-table table tbody tr.hover td { background-color: #f8f8f8 !important; Xbackground-color: #FFF9D7 !important; }
+
+/*
+.data-table table tbody tr.hover td.sortable { background-color: #f3f3f3 !important; }
+*/
+.data-table table tbody tr:last-child td { border-bottom: 1px solid #ddd; }
+.data-table table tfoot tr td { padding: 4px 6px; border-left: 1px solid #e2e2e2; vertical-align: top; background: #f5f5f5; font-weight: bold; border-bottom: 1px solid #ddd }
+.data-table table tfoot tr td.first-item { padding: 4px 6px; border-right: 1px solid #e2e2e2 }
+.data-table table tfoot tr td.last-item { padding: 4px 6px; border-right: 1px solid #e2e2e2 }
+.data-table table tfoot tr.cFOB td { padding: 4px 6px; border-left: 1px solid #e2e2e2; vertical-align: top; background: #e9e9e9; font-weight: bold; }
+.data-table table tfoot tr.cFOB td.first-item { padding: 4px 6px; border-right: 1px solid #e2e2e2 }
+.data-table table tfoot tr.cFOB td.last-item { padding: 4px 6px; border-right: 1px solid #e2e2e2 }
+.data-table-header { height: 28px; display: none;}
+
+.data-table-header .container-actions-selectable {
+    float: right;
+    Xpadding-right: 34px;
+    Xbackground: url(../../img/datatable/bg_arrow_selected.png) no-repeat scroll 10px 9px;
+    height: 28px;
+}
+.data-table-header .container-actions {
+    float: right;
+    height: 28px;
+}
+.data-table-header .container-filters {
+    float: left;
+    height: 28px;
+}
+.data-table-header .container-filters .row-filter-select { float: right; padding-left: 12px; }
+.data-table-header .container-filters .row-filter-select .cell { float: right; }
+.data-table-header .container-filters .row-filter-select .cell-filter-select { padding-left: 6px; }
+.data-table-body {
+    clear: both;
+    Xborder-bottom: 1px solid #e2e2e2;
+}
+.data-table-footer {
+    Xbackground: #f8f8f8;
+    Xborder-top: 1px solid #ccc;
+    Xborder-bottom: 1px solid #ccc;
+    padding: 5px 0px 0 0;
+    height: 28px;
+}
+.data-table-footer .container-results {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+}
+.data-table-footer .container-results .cell { float: right; }
+.data-table-footer .container-results b {
+    color: #333;
+}
+.data-table-footer .container-goto { float: right; display: none; } /* waiting for fix */
+.data-table-footer .container-goto .cell { float: right; }
+.data-table-footer .container-goto .cell .label-field {
+    line-height: 20px;
+    padding-right: 6px;
+}
+.data-table-footer .container-goto .cell input {
+    width: 34px;
+    margin: 0px;
+    font-family: inherit;
+    font-size: 11px;
+    color: #000;
+    Xborder: 1px solid #ccc;
+    padding: 2px;
+    border-color:#666666 #ccc #ccc;
+    border-style:solid;
+    border-width:1px;
+    outline-style: none;
+}
+.data-table-footer .container-goto .cell.button-field { margin-right: 6px; margin-left: 6px;}
+.data-table-footer .container-goto .cell a { }
+.text-align-right  { text-align: right; display: block;}
+.font-weight-bold { font-weight: bold; }
+.field-actions { padding: 4px 0; overflow: hidden; height: 14px; }
+.field-actions-mask { display: none;}
+.data-table-footer .container-show-rows { float: left; }
+.data-table-footer .container-show-rows .cell { float: right;}
+.data-table-footer .container-show-rows .label-field {
+    padding-left: 6px;
+}
+.data-table-footer .container-show-rows .cell.select-field { margin-left: 6px; }
+.data-table-footer .container-show-rows .cell select { margin: 0px; }
+.data-table-footer .container-filter { float: left; }
+.data-table-footer .container-filter .cell  { float: left;}
+.data-table-footer .container-filter .label-field {
+    padding-right: 6px;
+}
+.data-table-footer .container-filter .cell span.field-filter {
+    Xdisplay: block;
+    Xpadding-right: 22px;
+    Xborder-color:#666666 #ccc #ccc;
+    Xborder-style:solid;
+    Xborder-width:1px;
+    Xoutline-style: none;
+}
+.data-table-footer .container-filter .cell span.field-filter input {
+    background: url(../../img/datatable/icon_search.png) no-repeat scroll 100% 0;
+    width: 126px;
+    margin: 0px;
+    font-family: inherit;
+    Xfont-size: 11px;
+    color: #000;
+    Xborder: 1px solid #ccc;
+    padding: 2px 22px 2px 2px;
+    Xborder: none;
+    outline-style: none;
+}
+.data-table-footer .container-paging {
+    float: left;
+    margin-right: 6px;}
+.data-table-footer .container-paging .data-table-button-next {
+    margin-right: 6px;
+}
+.data-table-inline-button-container { float: right; padding-left: 6px;}
+.data-table-button-previous,
+.data-table-button-next {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+
+.data-table table tbody tr.subtotal td { padding: 4px 6px; border-left: 1px solid #e2e2e2 !important; vertical-align: top; background: #f5f5f5 !important; font-weight: bold; border-bottom: 1px solid #ddd }
+.data-table table tbody tr.subtotal td.last-item { padding: 4px 6px; border-right: 1px solid #e2e2e2 }
+.data-table table tbody tr.total td { padding: 4px 6px; border-left: 1px solid #e2e2e2 !important; vertical-align: top; background: #e9e9e9 !important; font-weight: bold; }
+.data-table table tbody tr.total td.last-item { padding: 4px 6px; border-right: 1px solid #e2e2e2 }
+
+/*
+.data-table table thead tr th.disabled {
+    background-color: #d3d3d3 !important;
+}
+*/
+.data-table table tbody tr td.disabled {
+    background-color: #f3f3f3 !important;
+}
+
+.data-table-inline-handle-insert {
+    margin-right: 40px !important;
+}
+
+.data-table .actions-buttons {
+    position: relative;
+}
+.data-table .actions-buttons .handle {
+    height: 24px;
+    margin-right: -25px;
+    position: absolute;
+    width: 24px;
+    text-align: center;
+}
+.data-table .actions-buttons .handle a { color: #000; width: 24px; height: 24px; background-color: #fff; cursor: pointer; font-size: 13px; line-height: 24px; }
+.data-table .actions-buttons .insert {
+    height: 24px;
+    margin-right: -25px;
+    position: absolute;
+    width: 24px;
+    text-align: center;
+}
+.data-table-inline-handle-insert .actions-buttons .handle {
+    margin-right: -50px !important;
+}
+.data-table .actions-buttons .insert a { color: #2ca01c; width: 24px; height: 24px; background-color: #fff; cursor: pointer; font-size: 13px; line-height: 24px;}
+.data-table .actions-buttons .delete {
+    height: 24px;
+    margin-left: -25px;
+    position: absolute;
+    left:0;
+    width: 24px;
+    text-align: center;
+}
+.data-table .actions-buttons .delete a { color: #c9302c; width: 24px; height: 24px; background-color: #fff; cursor: pointer; font-size: 13px; line-height: 24px;}
+
+.data-table .actions-buttons .handle a,
+.data-table .actions-buttons .insert a,
+.data-table .actions-buttons .delete a {
+    display: none;
+}
+.data-table tbody tr:hover .actions-buttons .handle a,
+.data-table tbody tr:hover .actions-buttons .insert a,
+.data-table tbody tr:hover .actions-buttons .delete a {
+    display: block;
+}
+
+.data-table-inline {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.data-table-inline thead tr th {
+    background-color: #e3eaf4 !important;
+}
+
+
+
+
+.data-table-inline tr.new-editable td {
+    background: #c9e5a8 !important;
+}
+.data-table-inline tr.new {
+
+}
+.data-table-inline tr.new td,
+.data-table-inline tr.new td.first-item {
+
+}
+.data-table-inline tr.new td:first-child {
+    position: relative;
+}
+.data-table-inline tr.new div.new {
+    left: 0px;
+    Xpadding: 10px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: 1px solid #ccc;
+    background: #f9edbe !important;
+    padding: 10px;
+}

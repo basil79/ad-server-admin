@@ -1,0 +1,6 @@
+{
+  "api": {
+    "endpoint": "http://localhost:8083"
+  },
+  "secret": "bezkoder-secret-key"
+}

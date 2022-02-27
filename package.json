@@ -32,8 +32,10 @@
   },
   "homepage": "https://github.com/basil79/ad-server-admin#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "express": "^4.17.2",
-    "hbs": "^4.2.0"
+    "hbs": "^4.2.0",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
