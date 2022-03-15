@@ -1,6 +1,7 @@
 (function() {
 
   $('#logout').on('click', function(e) {
+
     e.preventDefault();
 
     $.ajax({
@@ -13,6 +14,7 @@
       },
       success: function(data) {
         console.log(data);
+        location.href = '/';
       },
       error: function(XHR, textStatus, errorThrow) {
         console.log('error', XHR.responseJSON);

@@ -1,16 +1,16 @@
 module.exports = {
   env: {
-    browser: true,
+    // browser: true,
     es6: true,
     node: true,
   },
-  extends: 'eslint:recommended',
-  parser: 'babel-eslint',
+  // parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',
   },
-  plugins: ['import'],
+  // plugins: ['import'],
+  extends: 'eslint:recommended',
   rules: {
     quotes: ['error', 'single'],
     //'array-callback-return': ['error'],

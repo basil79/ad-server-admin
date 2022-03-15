@@ -3,6 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 
 const indexRouter = require('./routes/index');
+const registerRouter = require('./routes/register');
 const reportingRouter = require('./routes/reporting');
 const accountsRouter = require('./routes/accounts');
 const supplyTagsRouter = require('./routes/supply-tags');
@@ -34,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
 app.use('/', indexRouter);
+app.use('/register', registerRouter);
 app.use('/reporting', reportingRouter);
 app.use('/accounts', accountsRouter);
 app.use('/supply-tags', supplyTagsRouter);

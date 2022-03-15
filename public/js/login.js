@@ -20,6 +20,11 @@
       },
       success: function(data) {
         console.log(data);
+        if(data.error) {
+          console.log(data.error);
+          return;
+        }
+        location.href = '/reporting';
       },
       error: function(XHR, textStatus, errorThrow) {
         console.log('error', XHR.responseJSON);
