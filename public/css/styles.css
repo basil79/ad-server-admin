@@ -93,10 +93,16 @@ ul {
     margin-bottom: 16px;
     padding-left: 0;
 }
+/*
 li+li {
     margin-top: 0.25em;
 }
+ */
 * {
     box-sizing: border-box;
+}
+
+.card-lg>.card-body {
+    padding: 2.5rem 2.5rem;
 }
 

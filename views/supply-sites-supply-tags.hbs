@@ -1,0 +1,75 @@
+<a href="/reporting">Reporting</a> | <a href="/supply">Supply</a> | <a href="/demand-tags">Demand</a> | <a href="/settings">Settings</a>
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a class="breadcrumb-link" href="/supply">Supply Accounts</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="/supply/{{supplyAccountId}}"><span id="supply_account_name"></span> <span class="badge bg-secondary" id="supply_account_id"></span></a>
+    </li>
+    <li class="breadcrumb-item">
+        <span id="site_name"></span> <span class="badge bg-secondary" id="site_id"></span> <span id="modify_date">Last updated: 29/03/2022 11:02 AM</span>
+    </li>
+</ol>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <span class="nav-link active">Supply Tags</span>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/supply/{{supplyAccountId}}/sites/{{siteId}}/settings">Settings</a>
+    </li>
+</ul>
+
+<div class="row">
+    <div class="col-lg-3">
+        <ul class="list-group list-group-flush list-group-no-gutters">
+            <li class="list-group-item">
+                Requests
+            </li>
+            <li class="list-group-item">
+                Impressions
+            </li>
+            <li class="list-group-item">
+                Request Fill
+            </li>
+            <li class="list-group-item">
+                Overall Fill
+            </li>
+            <li class="list-group-item">
+                Revenue
+            </li>
+            <li class="list-group-item">
+                RPM
+            </li>
+            <li class="list-group-item">
+                CPM
+            </li>
+            <li class="list-group-item">
+                Media Cost
+            </li>
+            <li class="list-group-item">
+                Request Viewablity
+            </li>
+            <li class="list-group-item">
+                Impression Viewablity
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-9">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-outline-primary active">Time Interval</button>
+            <button type="button" class="btn btn-outline-primary">Comparison</button>
+        </div>
+        <div>Graph</div>
+        Request Fill | Revenue | Requests | Impressions
+    </div>
+</div>
+<button class="btn btn-primary">+ Supply Tag</button>
+<div id="table_supply_tags"></div>
+
+<script>
+    const supplyAccountId = {{supplyAccountId}};
+    const siteId = {{siteId}};
+</script>
+<script src="/js/supply-sites-supply-tags.js"></script>

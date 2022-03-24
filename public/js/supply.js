@@ -5,7 +5,7 @@
 
       $.ajax({
         type: 'GET',
-        url: 'http://localhost:8083/supply-tags',
+        url: 'http://localhost:8083/supply-accounts',
         dataType: 'json',
         xhrFields: {
           withCredentials: true
@@ -22,7 +22,7 @@
   }
 
   function renderTable() {
-    $('#table_supply_tags')
+    $('#table_supply_accounts')
       .empty()
       .dataTable({
         tableColumns: [{
@@ -31,15 +31,12 @@
         }, {
           key: 'name',
           label: 'Name',
-          formatter: function(cell, value, record) {
-            return $('<a href="/supply/' + record.supplyAccountId + '/sites/' + record.siteId + '/tags/' + record.id + '">' + value + '</a>');
+          formatter : function(cell, value, record) {
+            return $('<a href="/supply/' + record.id + '">' + value + '</a>');
           }
         }, {
-          key: 'demandTagCount',
-          label: 'Demand Tags'
-        }, {
-          key: 'rate',
-          label: 'Rate'
+          key: 'siteCount',
+          label: 'Sites'
         }, {
           key: 'requests',
           label: 'Requests'
@@ -58,9 +55,6 @@
         }, {
           key: 'opp_fill',
           label: 'Opp Fill'
-        }, {
-          key: 'isActive',
-          label: 'Active'
         }],
         change: function(params, callback) {
 
@@ -69,12 +63,12 @@
             size: params.size,
             sort: params.sort
           })
-          .then(data => {
-            callback(data);
-          })
-          .catch(err => {
-            console.log(err);
-          });
+            .then(data => {
+              callback(data);
+            })
+            .catch(err => {
+              console.log(err);
+            });
 
         },
         pagingStart: 20

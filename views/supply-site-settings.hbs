@@ -1,0 +1,44 @@
+<a href="/reporting">Reporting</a> | <a href="/supply">Supply</a> | <a href="/demand-tags">Demand</a> | <a href="/settings">Settings</a>
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a class="breadcrumb-link" href="/supply">Supply Accounts</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="/supply/{{supplyAccountId}}"><span id="supply_account_name"></span> <span class="badge bg-secondary" id="supply_account_id"></span></a>
+    </li>
+    <li class="breadcrumb-item">
+        <span id="site_name"></span> <span class="badge bg-secondary" id="site_id"></span> <span id="modify_date">Last updated: 29/03/2022 11:02 AM</span>
+    </li>
+</ol>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link" href="/supply/{{supplyAccountId}}/sites/{{siteId}}">Supply Tags</a>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link active">Settings</span>
+    </li>
+</ul>
+
+<h3>Site Settings</h3>
+
+<div class="row">
+    <div class="mb-3">
+        <label class="form-label">Name:</label>
+        <input class="form-control" id="input_site_name" type="text" autocomplete="off"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Domain:</label>
+        <input class="form-control" id="input_site_domain" type="text" autocomplete="off"/>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" id="save">Save</button>
+    </div>
+</div>
+
+<script>
+    const supplyAccountId = {{supplyAccountId}};
+    const siteId = {{siteId}};
+</script>
+<script src="/js/supply-site-settings.js"></script>
