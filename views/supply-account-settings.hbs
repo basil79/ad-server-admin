@@ -1,0 +1,50 @@
+<a href="/reporting">Reporting</a> | <a href="/supply">Supply</a> | <a href="/demand-tags">Demand</a> | <a href="/settings">Settings</a>
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a class="breadcrumb-link" href="/supply">Supply Accounts</a>
+    </li>
+    <li class="breadcrumb-item">
+        <span id="supply_account_name"></span> <span class="badge bg-secondary" id="supply_account_id"></span> <span id="modify_date">Last updated: 29/03/2022 11:02 AM</span>
+    </li>
+</ol>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link" href="/supply/{{supplyAccountId}}">Sites</a>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link active" href="/supply/{{supplyAccountId}}/settings">Settings</span>
+    </li>
+</ul>
+
+<h3>Supply Account Settings</h3>
+<h3>Basic Info</h3>
+
+<div class="row">
+    <div class="mb-3">
+        <label class="form-label">Name:</label>
+        <input class="form-control" id="input_supply_account_name" type="text" autocomplete="off"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Payment Terms:</label>
+        <select class="form-control">
+            <option>CPM</option>
+            <option>Rev-Share</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">CPM Rate:</label>
+        <input class="form-control" id="cpm_rate" type="text" autocomplete="off"/>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" id="save">Save</button>
+    </div>
+</div>
+
+
+
+<script>
+    const supplyAccountId = {{supplyAccountId}};
+</script>
+<script src="/js/supply-account-settings.js"></script>

@@ -1,0 +1,65 @@
+<a href="/reporting">Reporting</a> | <a href="/supply">Supply</a> | <a href="/demand-tags">Demand</a> | <a href="/settings">Settings</a>
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a class="breadcrumb-link" href="/supply">Supply Accounts</a>
+    </li>
+    <li class="breadcrumb-item">
+        <span id="supply_account_name"></span> <span class="badge bg-secondary" id="supply_account_id"></span> <span id="modify_date">Last updated: 29/03/2022 11:02 AM</span>
+    </li>
+</ol>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <span class="nav-link active">Sites</span>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/supply/{{supplyAccountId}}/settings">Settings</a>
+    </li>
+</ul>
+
+<div class="row">
+    <div class="col-lg-3">
+        <ul class="list-group list-group-flush list-group-no-gutters">
+            <li class="list-group-item">
+                Requests
+            </li>
+            <li class="list-group-item">
+                Impressions
+            </li>
+            <li class="list-group-item">
+                Request Fill
+            </li>
+            <li class="list-group-item">
+                Overall Fill
+            </li>
+            <li class="list-group-item">
+                Revenue
+            </li>
+            <li class="list-group-item">
+                RPM
+            </li>
+            <li class="list-group-item">
+                CPM
+            </li>
+            <li class="list-group-item">
+                Media Cost
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-9">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-outline-primary active">Time Interval</button>
+            <button type="button" class="btn btn-outline-primary">Comparison</button>
+        </div>
+        <div>Graph</div>
+        Request Fill | Revenue | Requests | Impressions
+    </div>
+</div>
+
+<div id="table_sites"></div>
+
+<script>
+    const supplyAccountId = {{supplyAccountId}};
+</script>
+<script src="/js/supply-sites.js"></script>

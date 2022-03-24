@@ -4,7 +4,6 @@
 
   $('#login').on('click', function() {
 
-
     $.ajax({
       type: 'POST',
       url: 'http://localhost:8083/auth/login',
