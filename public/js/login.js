@@ -35,4 +35,18 @@
 
   });
 
+
+
+
+
+
+
+  /*
+  // TEST
+  setInterval(function() {
+    document.getElementById('label_number').innerHTML = Math.floor(Math.random() * 100);
+
+  }, 5000); // 5000 ms = 5 sec
+   */
+
 })();

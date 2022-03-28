@@ -10,6 +10,8 @@ const accountsRouter = require('./routes/accounts');
 const supplyRouter = require('./routes/supply');
 const sitesRouter = require('./routes/sites');
 const supplyTagsRouter = require('./routes/supply-tags');
+const demandRouter = require('./routes/demand');
+const advertisersRouter = require('./routes/advertisers');
 const demandTagsRouter = require('./routes/demand-tags');
 const settingsRouter = require('./routes/settings');
 
@@ -46,6 +48,8 @@ app.use('/accounts', accountsRouter);
 app.use('/supply', supplyRouter);
 app.use('/sites', sitesRouter);
 app.use('/supply-tags', supplyTagsRouter);
+app.use('/demand', demandRouter);
+app.use('/advertisers', advertisersRouter);
 app.use('/demand-tags', demandTagsRouter);
 app.use('/settings', settingsRouter);
 

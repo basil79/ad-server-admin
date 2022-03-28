@@ -20,35 +20,16 @@
         <a class="nav-link" href="/supply/{{supplyAccountId}}/sites/{{siteId}}/tags/{{supplyTagId}}">Demand Tags</a>
     </li>
     <li class="nav-item">
-        <span class="nav-link active">Settings</span>
+        <a class="nav-link" href="/supply/{{supplyAccountId}}/sites/{{siteId}}/tags/{{supplyTagId}}/settings">Settings</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/supply/{{supplyAccountId}}/sites/{{siteId}}/tags/{{supplyTagId}}/export">Export Tag</a>
+        <span class="nav-link active">Export Tag</span>
     </li>
 </ul>
 <div class="row">
     <div class="mb-3">
-        <label class="form-label">Name:</label>
-        <input class="form-control" id="input_supply_tag_name" type="text" autocomplete="off"/>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Status:</label>
-        Active | Inactive
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Supply Account (Partner):</label>
-        <select class="form-control"></select>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Timeout:</label>
-    </div>
-    TODO:
-    <div class="mb-3">
-        <label class="form-label">Payment Terms:</label>
-        CPM | Rev-Share
-    </div>
-    <div class="mb-3">
-        <button class="btn btn-primary" id="save">Save</button>
+        <label class="form-label">VAST Tag URL:</label>
+        <textarea class="form-control" id="input_supply_tag_vast"></textarea>
     </div>
 </div>
 
@@ -57,4 +38,4 @@
     const siteId = {{siteId}};
     const supplyTagId = {{supplyTagId}};
 </script>
-<script src="/js/supply-sites-supply-tag-settings.js"></script>
+<script src="/js/supply-sites-supply-tag-export.js"></script>

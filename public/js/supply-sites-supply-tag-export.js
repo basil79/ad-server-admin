@@ -87,7 +87,7 @@
     $('#supply_tag_name').text(data.name);
     $('#supply_tag_id').text(data.id);
 
-    $('#input_supply_tag_name').val(data.name);
+    $('#input_supply_tag_vast').val(adServerURL + '/vast/' + data.id);
 
   }).catch(err => {
     console.log(err);

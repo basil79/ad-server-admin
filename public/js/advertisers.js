@@ -5,7 +5,7 @@
 
       $.ajax({
         type: 'GET',
-        url: 'http://localhost:8083/demand-tags',
+        url: 'http://localhost:8083/advertisers',
         dataType: 'json',
         xhrFields: {
           withCredentials: true
@@ -22,7 +22,7 @@
   }
 
   function renderTable() {
-    $('#table_demand_tags')
+    $('#table_advertisers')
       .empty()
       .dataTable({
         tableColumns: [{
@@ -32,11 +32,11 @@
           key: 'name',
           label: 'Name',
           formatter: function(cell, value, record) {
-            return $('<a href="/demand/' + record.demandAccountId + '/advertisers/' + record.advertiserId + '/tags/' + record.id + '">' + value + '</a>');
+            return $('<a href="/demand/' + record.demandAccountId + '/advertisers/' + record.id + '">' + value + '</a>');
           }
         }, {
-          key: 'rate',
-          label: 'Rate'
+          key: 'demandTagCount',
+          label: 'Demand Tags'
         }, {
           key: 'requests',
           label: 'Requests'
@@ -47,11 +47,14 @@
           key: 'impressions',
           label: 'Imp'
         }, {
-          key: 'revenue',
-          label: 'Revenue'
+          key: 'opp_rate',
+          label: 'Opp Rate'
         }, {
           key: 'request_fill',
           label: 'Req Fill'
+        }, {
+          key: 'opp_fill',
+          label: 'Opp Fill'
         }],
         change: function(params, callback) {
 
@@ -60,12 +63,12 @@
             size: params.size,
             sort: params.sort
           })
-          .then(data => {
-            callback(data);
-          })
-          .catch(err => {
-            console.log(err);
-          });
+            .then(data => {
+              callback(data);
+            })
+            .catch(err => {
+              console.log(err);
+            });
 
         },
         pagingStart: 20

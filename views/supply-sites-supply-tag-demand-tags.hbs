@@ -1,4 +1,4 @@
-<a href="/reporting">Reporting</a> | <a href="/supply">Supply</a> | <a href="/demand-tags">Demand</a> | <a href="/settings">Settings</a>
+<a href="/reporting">Reporting</a> | <a href="/supply">Supply</a> | <a href="/demand">Demand</a> | <a href="/settings">Settings</a>
 
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
@@ -15,15 +15,17 @@
     </li>
 </ol>
 
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs mb-3">
     <li class="nav-item">
         <span class="nav-link active">Demand Tags</span>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/supply/{{supplyAccountId}}/sites/{{siteId}}/tags/{{supplyTagId}}/settings">Settings</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/supply/{{supplyAccountId}}/sites/{{siteId}}/tags/{{supplyTagId}}/export">Export Tag</a>
+    </li>
 </ul>
-
 <div class="row">
     <div class="col-lg-3">
         <ul class="list-group list-group-flush list-group-no-gutters">
@@ -76,4 +78,4 @@
     const siteId = {{siteId}};
     const supplyTagId = {{supplyTagId}};
 </script>
-<script src="/js/supply-sites-supply-tags-demand-tags.js"></script>
+<script src="/js/supply-sites-supply-tag-demand-tags.js"></script>
