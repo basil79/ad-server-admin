@@ -3,7 +3,7 @@ const verifyToken = require('../controllers/jwt');
 const router = express.Router();
 
 router.get('/', [verifyToken], (req, res) => {
-  res.render('supply', { title: 'Supply Accounts', layout: 'secure.hbs' });
+  res.render('supply-accounts', { title: 'Supply Accounts', layout: 'secure.hbs' });
 });
 
 router.get('/:id', [verifyToken], (req, res) => {
@@ -32,15 +32,21 @@ router.get('/:id/sites/:siteId/tags/:tagId', [verifyToken], (req, res) => {
   const id = req.params.id;
   const siteId = req.params.siteId;
   const supplyTagId = req.params.tagId;
-  res.render('supply-sites-supply-tags-demand-tags', { title: 'Demand Tags', layout: 'secure.hbs', supplyAccountId: id, siteId: siteId, supplyTagId: supplyTagId });
+  res.render('supply-sites-supply-tag-demand-tags', { title: 'Demand Tags', layout: 'secure.hbs', supplyAccountId: id, siteId: siteId, supplyTagId: supplyTagId });
 });
 
 router.get('/:id/sites/:siteId/tags/:tagId/settings', [verifyToken], (req, res) => {
   const id = req.params.id;
   const siteId = req.params.siteId;
   const supplyTagId = req.params.tagId;
-
   res.render('supply-sites-supply-tag-settings', { title: 'Supply Tag Settings', layout: 'secure.hbs', supplyAccountId: id, siteId: siteId, supplyTagId: supplyTagId });
+});
+
+router.get('/:id/sites/:siteId/tags/:tagId/export', [verifyToken], (req, res) => {
+  const id = req.params.id;
+  const siteId = req.params.siteId;
+  const supplyTagId = req.params.tagId;
+  res.render('supply-sites-supply-tag-export', { title: 'Supply Tag Export', layout: 'secure.hbs', supplyAccountId: id, siteId: siteId, supplyTagId: supplyTagId });
 });
 
 module.exports = router;
